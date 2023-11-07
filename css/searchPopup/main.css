@@ -1,0 +1,114 @@
+#search-popup{
+  border: none !important;
+  outline: 0 !important;
+  width: 70%;
+  border-radius: 15px;
+  z-index: 5;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.searchForm-popup{
+  width: 100%;
+  min-height: 610px; 
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border: none;
+
+}
+
+
+
+.searchForm-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.searchForm-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width:50%;
+  gap: 10px;
+  padding: 25px 20px;
+ 
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Manrope;
+}
+
+.attr-box-clicked{
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.attr-box-clicked:hover{
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1230px) {
+  .searchForm-section {
+    width:60%;
+  }
+  #search-popup{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .searchForm-section {
+    width:70%;
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .searchForm-section {
+    width:80%;
+  }
+  #search-popup{
+    width: 90%;
+    
+  }
+}
+
+@media screen and (max-width: 670px) {
+ 
+  .searchForm-section {
+    width:95%;
+  }
+  #search-popup{
+    width: 100% ;
+    padding: 20px 10px;
+    
+  }
+
+  
+  .searchForm-header #l-text-big{
+    display: none;
+  }
+  .attr-box {
+    padding: 0 22px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .searchForm-section {
+    width:100%;
+  
+  }
+  #search-popup{ 
+    padding: 10px 0;
+   
+  }
+  
+}

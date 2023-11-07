@@ -1,0 +1,59 @@
+/* Location search  */
+
+.search-reg-text {
+    font-size: 16px;
+   margin-top: 10px;
+   font-weight: 600;
+  }
+  .region-img-icon {
+    width: 100%;
+    object-fit: cover;
+  }
+  .reg-img-card {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 12px;
+    background-color: #fff;
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .reg-img-unclick{
+    border: 1px solid #ebebeb;
+  }
+  .reg-img-click{
+    border: 1px solid #717171;
+  }
+  .reg-img-card:hover{
+    border: 1px solid #717171;
+  }
+  
+  .region-text {
+    position: relative;
+    font-weight: 600;
+  }
+  .region {
+    /* height: 148px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+      height: 100%;
+    
+  }
+  
+  
+  .regions {
+    font-size: 12px;
+    color: #717171;
+    width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(124px, 3fr));
+      column-gap: 15px;
+      row-gap: 20px;
+  }

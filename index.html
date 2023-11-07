@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rentico</title>
+
+    <!-- Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/categories.css">
+    <!-- CSS for SearchPopup -->
+  
+  <link rel="stylesheet" href="css/searchPopup/header.css">
+  <link rel="stylesheet" href="css/searchPopup/main.css">
+  <link rel="stylesheet" href="css/searchPopup/guestsSection.css">
+  <link rel="stylesheet" href="css/searchPopup/daysSection.css">
+  <link rel="stylesheet" href="css/searchPopup/locationSection.css">
+    
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="nav-logo">
+    <div class="rentico">rentico</div>
+  </div>
+
+  <!-- SearchPopup when searchbar is clicked -->
+  <!-- Search Popup -->
+  <dialog id="search-popup" >
+    <div class="searchForm-popup">
+  
+        <div class="searchForm-header">
+          
+        <div class="searchForm-searchbar">
+          <div id="location" class="searchForm-attr-container attr-box-clicked">
+            <div class="attr-box ">
+              <div class="attr-name">Location</div>
+              <!-- Searchbar For bigger screens -->
+              <div id="l-text-big" class="attr-value">Where are you going?</div>
+              <!-- Searchbar For smaller screens -->
+              <div id="l-text-sm" class="attr-value">Anywhere</div>
+            </div>
+          </div>
+          
+          <div id="days" class="searchForm-attr-container">
+            <div class="attr-box ">
+              <div class="attr-name">Days</div>
+              <div class="attr-value">Add dates</div>
+            </div>
+          </div>
+          
+          <div id="guests" class="searchForm-attr-container">
+            <div class="attr-box">
+              <div class="attr-name">Guests</div>
+              <div class="attr-value">Add guests</div>
+            </div>
+            <!-- For closing SearchPopup -->
+            <div id="close-searchPopup"  class="search-btn">
+              <img class="search-icon" alt="" src="./images/header/searchIcon.svg" />
+            </div>
+          
+          </div>
+          
+        </div>
+      
+      
+        </div>
+        <!-- Searchform main section -->
+        <div class="searchForm-main">
+          
+          <!-- Searchform location section -->
+          <section id="location-section" class="searchForm-section">
+            
+                <p class="search-reg-text">Search by region</p>
+  
+                <div class="regions">
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/world.png"
+                      />
+                    </div>
+                    <div class="region-text">I’m flexible</div>
+                  </div>
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/europe.png"
+                      />
+                    </div>
+                    <div class="region-text">Europe</div>
+                  </div>
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/uk.png"
+                      />
+                    </div>
+                    <div class="region-text">United Kingdom</div>
+                  </div>
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/southeastAsia.png"
+                      />
+                    </div>
+                    <div class="region-text">Southeast Asia</div>
+                  </div>
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/canada.png"
+                      />
+                    </div>
+                    <div class="region-text">Canada</div>
+                  </div>
+                  <div class="region">
+                    <div class="reg-img-card reg-img-unclick">
+                      <img
+                        class="region-img-icon"
+                        alt=""
+                        src="./images/searchPopup/usa.png"
+                      />
+                    </div>
+                    <div class="region-text">United States</div>
+                  </div>
+                </div>
+            
+            
+          </section>
+          <!-- Searchform days section -->
+          <section id="days-section" class="searchForm-section">
+            
+          </section>
+          <!-- Searchform guests section -->
+          <section id="guests-section" class="searchForm-section">
+            <div class="guests">
+              <div class="guest-box">
+                <div class="guest-box-left">
+                  <div class="guest-box-title">Adults</div>
+                  <div class="guest-box-txt">Ages 13 or above</div>
+                </div>
+
+                <div class="guest-box-right">
+                  <button id="a-minus-btn" class="minusPlus-btn">
+                    <img
+                      class="minus-sign-icon"
+                      alt=""
+                      src="./images/searchPopup/minusSign.svg"
+                    />
+                  </button>
+                  <div id="a-guests" class="guest-box-title">0</div>
+                  
+                  <button id="a-plus-btn" class="minusPlus-btn">
+                    <img class="plus-sign-icon" alt="" src="./images/searchPopup/plusSign.svg" />
+                  </button>
+                </div>
+              </div>
+              <div class="guest-box">
+                <div class="guest-box-left">
+                  <div  class="guest-box-title">Children</div>
+                  <div class="guest-box-txt">Ages 2 - 12</div>
+                </div>
+                <div class="guest-box-right">
+                  <button id="c-minus-btn" class="minusPlus-btn">
+                    <img
+                      class="minus-sign-icon"
+                      alt=""
+                      src="./images/searchPopup/minusSign.svg"
+                    />
+                  </button>
+                  <div id="c-guests" class="guest-box-title">0</div>
+                  <button id="c-plus-btn" class="minusPlus-btn">
+                    <img class="plus-sign-icon" alt="" src="./images/searchPopup/plusSign.svg" />
+                  </button>
+                </div>
+              </div>
+              <div class="guest-box">
+                <div class="guest-box-left">
+                  <div class="guest-box-title">Infants</div>
+                  <div class="guest-box-txt">Under 2</div>
+                </div>
+                <div class="guest-box-right">
+                  <button id="i-minus-btn" class="minusPlus-btn">
+                    <img
+                      class="minus-sign-icon"
+                      alt=""
+                      src="./images/searchPopup/minusSign.svg"
+                    />
+                  </button>
+                  <div id="i-guests" class="guest-box-title">0</div>
+                  <button id="i-plus-btn" class="minusPlus-btn">
+                    <img class="plus-sign-icon" alt="" src="./images/searchPopup/plusSign.svg" />
+                  </button>
+                </div>
+              </div>
+              <div class="guest-box1">
+                <div class="guest-box-left">
+                  <div class="guest-box-title">Pets</div>
+                </div>
+                <div class="guest-box-right1">
+                  <button class="pets-btn pets-btn-unclick">
+                    <div class="pets-btn-txt">YES</div>
+                  </button>
+                  <button class="pets-btn pets-btn-unclick">
+                    <div class="pets-btn-txt">NO</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>  
+    </div>
+  </dialog>
+
+  <!-- Searchbar -->
+  <!-- And also button for opening searchModal -->
+  <div id="open-searchPopup-big"  class="searchbar">
+
+    <div class="search-attr-container ">
+      <div class="attr-box ">
+        <div class="attr-name">Location</div>
+        <!-- For bigger screens -->
+        <div id="l-text-big" class="attr-value">Where are you going?</div>
+         <!-- For smaller screens -->
+        <div id="l-text-sm" class="attr-value">Anywhere</div>
+      </div>
+    </div>
+    
+    <div class="search-attr-container">
+      <div id="divider-lines" class="attr-box ">
+        <div class="attr-name">Days</div>
+        <div class="attr-value">Add dates</div>
+      </div>
+    </div>
+    
+    <div class="search-attr-container">
+      <div class="attr-box">
+        <div class="attr-name">Guests</div>
+        <div class="attr-value">Add guests</div>
+      </div>
+      <div class="search-btn">
+        <img class="search-icon" alt="" src="./images/header/searchIcon.svg" />
+      </div>
+    </div> 
+  </div>
+  
+
+  <!-- Searchbar For smaller devices -->
+  <!-- And also button for opening searchModal -->
+  <div id="open-searchPopup-sm" class="searchbar-sm">
+    <div class="search-attr-container ">
+      <div class="attr-box ">
+        <div class="attr-name">Anywhere</div>
+        <!-- For bigger screens -->
+        <div id="l-text-sm" class="attr-value">Any week . Add guests</div>
+      </div>
+        
+    </div>
+  
+    
+    <div class="search-attr-container">
+
+      <div class="search-btn">
+        <img class="search-icon" alt="" src="./images/header/searchIcon.svg" />
+      </div>
+    
+    </div>
+    
+  </div>
+
+
+
+
+  <!-- Right part of navbar -->
+  <div class="right-part" >
+    <a class="rent-your-home">Rent your home</a>
+    <button class="user-profile">
+      <img class="user-icon" alt="" src="./images/header/user-icon.svg" />
+      <ul class="profile-dropdown">
+        <li class="dropdown-item">
+          <p>Sign up</p>
+        </li>
+        <li class="dropdown-item">
+          <p>Log in</p>
+        </li>
+        <li class="dropdown-item">
+          <p>Rent your home</p>
+        </li>
+        <li class="dropdown-item"> 
+          <p>Help</p>
+        </li>
+      </ul>
+    </button>
+  </div>
+  </nav>
+
+
+ 
+    
+  <!-- Main -->
+  <div class="main-section">
+
+    <!-- Filter section -->
+    <div class="filter-section">
+      <!-- filter-top -->
+      <div class="filter-top">
+        <div class="filter">
+          <img class="filter-icon" alt="" src="./images/main/filterIcon.svg" />
+
+          <h2 class="filter-text">Filters</h2>
+        </div>
+      </div>
+
+
+      <!-- filter-middle -->
+      <div class="filter-middle">
+
+        <!-- Price range filter -->
+        <div class="price-range">
+          <h3 class="filter-name">Price Range</h3>
+          <div class="price-range-inputs">
+            <div class="price-min">
+              <h6 class="minmax-txt">Minimum</h6>
+              <label class="input-price-label">
+                <input
+                  class="input-price"
+                  type="text"
+                  placeholder="$199"
+
+                />
+              </label>
+            </div>
+
+            <div class="price-max">
+              <h6 class="minmax-txt">Maximum</h6>
+              <label class="input-price-label">
+                <input
+                  class="input-price"
+                  type="text"
+                  placeholder="$9999"
+
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- rooms and beds filter -->
+        <div class="rooms-and-beds">
+          <h3 class="filter-name">Rooms and Beds</h3>
+          <div class="bedrooms">
+            <h3 class="rooms-filter-name">Bedrooms</h3>
+            <div class="numbers-container">
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-clicked">
+                <h4 class="filter-number-txt">Any</h4>
+              </div>
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">1</h4>
+              </div>
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">2</h4>
+              </div>
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">3</h4>
+              </div>
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">4</h4>
+              </div>
+              <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">5+</h4>
+              </div>
+            </div>
+          </div>
+          <div class="beds">
+            <h3 class="rooms-filter-name">Beds</h3>
+            <div class="numbers-container">
+              <div class="beds-filter-btn filter-number-btn num-btn-clicked">
+                <h4 class="filter-number-txt">Any</h4>
+              </div>
+              <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">1</h4>
+              </div>
+              <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">2</h4>
+              </div>
+              <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">3</h4>
+              </div>
+              <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">4</h4>
+              </div>
+              <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">5+</h4>
+              </div>
+            </div>
+          </div>
+          <div class="bathrooms">
+            <h3 class="rooms-filter-name">Bathrooms</h3>
+            <div class="numbers-container">
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-clicked">
+                <h4 class="filter-number-txt">Any</h4>
+              </div>
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">1</h4>
+              </div>
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">2</h4>
+              </div>
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">3</h4>
+              </div>
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">4</h4>
+              </div>
+              <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                <h4 class="filter-number-txt">5+</h4>
+              </div>
+            </div>
+          </div>
+      </div>
+
+        <!-- property type filter -->
+        <div class="property-type">
+          <h3 class="filter-name">Property Type</h3>
+          <div class="property-filter-container">
+            <button class="property-filter">
+              <img
+                class="property-filter-icon"
+                alt=""
+                src="./images/main/houseIcon.png"
+              />
+
+              <h4 class="property-filter-name">House</h4>
+            </button>
+            <button class="property-filter">
+              <img
+                class="property-filter-icon"
+                alt=""
+                src="./images/main/flatIcon.png"
+              />
+
+              <h4 class="property-filter-name">Flat</h4>
+            </button>
+            <button class="property-filter">
+              <img
+                class="property-filter-icon"
+                alt=""
+                src="./images/main/hotelIcon.png"
+              />
+
+              <h4 class="property-filter-name">Hotel</h4>
+            </button>
+          </div>
+        </div>
+
+        <!-- amenities filter -->
+        <div class="amenities">
+          <h3 class="filter-name">Amenities</h3>
+          <div class="amenities-filter-container">
+            <div class="amenities-left">
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Wifi</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">TV</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Pool</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Gym</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Heating</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Iron</h4>
+              </label>
+            </div>
+            <div class="amenities-right">
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Air conditioning</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Private attached bathroom</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Dedicated workspace</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Free parking</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Indoor fireplace</h4>
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+
+                <h4 class="checkbox-txt">Smoke alarm</h4>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- rating filter -->
+        <div class="rating">
+          <h3 class="filter-name">Rating ⭐⭐⭐</h3>
+          <div class="numbers-container">
+            <div class="rating-filter-btn filter-number-btn num-btn-clicked">
+              <h4 class="filter-number-txt">Any</h4>
+            </div>
+            <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+              <h4 class="filter-number-txt">3+</h4>
+            </div>
+            <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+              <h4 class="filter-number-txt">4+</h4>
+            </div>
+            <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+              <h4 class="filter-number-txt">5</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- filter-bottom -->
+      <div class="filter-bottom">
+        <button class="clear-all-btn">
+          <h2 class="filter-text">Clear all</h2>
+        </button>
+        <button class="show-places-btn">
+          <h2 class="filter-text">Show Places</h2>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right part of main section -->
+    <div class="main-section-right">
+
+      <!-- Categories Section-->
+      <div class="categories-section">
+      <div class=" categories-scrollbar">
+        <div class="categories-items">
+          <button id="category-item-1" class="category-item ">
+            <img class="category-icon" alt="" src="./images/categories/islands.png" />
+
+            <div class="category-name">Islands</div>
+          </button>
+          <button class="category-item ">
+            <img class="category-icon" alt="" src="./images/categories/nationalParks.png" />
+
+            <div class="category-name">National parks</div>
+          </button>
+          <button class="category-item " >
+            <img class="category-icon" alt="" src="./images/categories/tinyHomes.png" />
+
+            <div class="category-name">Tiny homes</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/omg.png" />
+
+            <div class="category-name">OMG!</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/camping.png" />
+
+            <div class="category-name">Camping</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/cabins.png" />
+
+            <div class="category-name">Cabins</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/design.png" />
+
+            <div class="category-name">Design</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/arctic.png" />
+
+            <div class="category-name">Arctic</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/amazingPools.png" />
+
+            <div class="category-name">Amazing pools</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/lakefront.png" />
+
+            <div class="category-name">Lakefront</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/surfing.png" />
+
+            <div class="category-name">Surfing</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/treehouse.png" />
+
+            <div class="category-name">Treehouses</div>
+          </button>
+          
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/trending.png" />
+
+            <div class="category-name">Trending</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/beach.png" />
+
+            <div class="category-name">Beach</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/countryside.png" />
+
+            <div class="category-name">Countryside</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/top-of-world.png" />
+
+            <div class="category-name">Top of the world</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/amazing-views.png" />
+
+            <div class="category-name">Amazing views</div>
+          </button>
+          <button class="category-item" >
+            <img class="category-icon" alt="" src="./images/categories/a-frames.png" />
+
+            <div class="category-name">A-frames</div>
+          </button>
+        </div>
+      </div>
+      <div class="gradient"></div>
+      <div class="category-right">
+        <button class="show-more-btn">
+          <img class="arrow-icon" alt="" src="./images/categories/arrowIcon.svg" />
+          
+        </button>
+
+
+        <!-- Button for opening filter modal -->
+        <button id="open-filter-btn"  class="category-filter-btn">
+          <img src="./images/main/filterIcon.svg" alt="" class="filter-icon">
+        </button>
+      </div>
+      <!-- Filter modal/search -->
+      <dialog id="filter-modal"  class="filter-modal">
+        <div class="filter-section">
+          <!-- filter-top -->
+          <div class="filter-top">
+            <div class="filter">
+              <img class="filter-icon" alt="" src="./images/main/filterIcon.svg" />
+    
+              <h2 class="filter-text">Filters</h2>
+            </div>
+          </div>
+    
+    
+          <!-- filter-middle -->
+          <div class="filter-middle">
+    
+            <!-- Price range filter -->
+            <div class="price-range">
+              <h3 class="filter-name">Price Range</h3>
+              <div class="price-range-inputs">
+                <div class="price-min">
+                  <h6 class="minmax-txt">Minimum</h6>
+                  <label class="input-price-label">
+                    <input
+                      class="input-price"
+                      type="text"
+                      placeholder="$199"
+    
+                    />
+                  </label>
+                </div>
+    
+                <div class="price-max">
+                  <h6 class="minmax-txt">Maximum</h6>
+                  <label class="input-price-label">
+                    <input
+                      class="input-price"
+                      type="text"
+                      placeholder="$9999"
+    
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+    
+            <!-- rooms and beds filter -->
+            <div class="rooms-and-beds">
+              <h3 class="filter-name">Rooms and Beds</h3>
+              <div class="bedrooms">
+                <h3 class="rooms-filter-name">Bedrooms</h3>
+                <div class="numbers-container">
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-clicked">
+                    <h4 class="filter-number-txt">Any</h4>
+                  </div>
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">1</h4>
+                  </div>
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">2</h4>
+                  </div>
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">3</h4>
+                  </div>
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">4</h4>
+                  </div>
+                  <div class="bedrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">5+</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="beds">
+                <h3 class="rooms-filter-name">Beds</h3>
+                <div class="numbers-container">
+                  <div class="beds-filter-btn filter-number-btn num-btn-clicked">
+                    <h4 class="filter-number-txt">Any</h4>
+                  </div>
+                  <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">1</h4>
+                  </div>
+                  <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">2</h4>
+                  </div>
+                  <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">3</h4>
+                  </div>
+                  <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">4</h4>
+                  </div>
+                  <div class="beds-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">5+</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="bathrooms">
+                <h3 class="rooms-filter-name">Bathrooms</h3>
+                <div class="numbers-container">
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-clicked">
+                    <h4 class="filter-number-txt">Any</h4>
+                  </div>
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">1</h4>
+                  </div>
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">2</h4>
+                  </div>
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">3</h4>
+                  </div>
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">4</h4>
+                  </div>
+                  <div class="bathrooms-filter-btn filter-number-btn num-btn-unclicked">
+                    <h4 class="filter-number-txt">5+</h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+    
+            <!-- property type filter -->
+            <div class="property-type">
+              <h3 class="filter-name">Property Type</h3>
+              <div class="property-filter-container">
+                <button class="property-filter">
+                  <img
+                    class="property-filter-icon"
+                    alt=""
+                    src="./images/main/houseIcon.png"
+                  />
+    
+                  <h4 class="property-filter-name">House</h4>
+                </button>
+                <button class="property-filter">
+                  <img
+                    class="property-filter-icon"
+                    alt=""
+                    src="./images/main/flatIcon.png"
+                  />
+    
+                  <h4 class="property-filter-name">Flat</h4>
+                </button>
+                <button class="property-filter">
+                  <img
+                    class="property-filter-icon"
+                    alt=""
+                    src="./images/main/hotelIcon.png"
+                  />
+    
+                  <h4 class="property-filter-name">Hotel</h4>
+                </button>
+              </div>
+            </div>
+    
+            <!-- amenities filter -->
+            <div class="amenities">
+              <h3 class="filter-name">Amenities</h3>
+              <div class="amenities-filter-container">
+                <div class="amenities-left">
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Wifi</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">TV</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Pool</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Gym</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Heating</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Iron</h4>
+                  </label>
+                </div>
+                <div class="amenities-right">
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Air conditioning</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Private attached bathroom</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Dedicated workspace</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Free parking</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Indoor fireplace</h4>
+                  </label>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" />
+    
+                    <h4 class="checkbox-txt">Smoke alarm</h4>
+                  </label>
+                </div>
+              </div>
+            </div>
+    
+            <!-- rating filter -->
+            <div class="rating">
+              <h3 class="filter-name">Rating ⭐⭐⭐</h3>
+              <div class="numbers-container">
+                <div class="rating-filter-btn filter-number-btn num-btn-clicked">
+                  <h4 class="filter-number-txt">Any</h4>
+                </div>
+                <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+                  <h4 class="filter-number-txt">3+</h4>
+                </div>
+                <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+                  <h4 class="filter-number-txt">4+</h4>
+                </div>
+                <div class="rating-filter-btn filter-number-btn num-btn-unclicked">
+                  <h4 class="filter-number-txt">5</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    
+          <!-- filter-bottom -->
+          <div class="filter-bottom">
+            <button class="clear-all-btn">
+              <h2 class="filter-text">Clear all</h2>
+            </button>
+            <!-- Button for closing filter popup -->
+            <button id="close-filter-btn"  class="show-places-btn">
+              <h2 class="filter-text">Show Places</h2>
+            </button>
+          </div>
+        </div>
+        
+      </dialog>
+      
+    
+    
+      </div>      
+      <!-- Rentals section -->
+      <div class="rentals-section">
+
+        <!-- Card 1 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property.png" />
+
+              <!-- <img  src="./images/main/heart.svg" /> -->
+              <!-- For hover effect, I have used here svg intead of png -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">MV, Maldives</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star-icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property1.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Kastraki, Greece</div>
+                <div class="rating">4.4
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">6,945 kilometers away</div>
+                <div class="card-text">1-7 Nov</div>
+                <div class="price-text">
+                  <b>$600</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property2.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Île-de-Bréhat, France</div>
+                <div class="rating">3.2
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$600</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property3.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Sälen, Sweden</div>
+                <div class="rating">4.8
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property4.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Anambas, Indonesia</div>
+                <div class="rating">4.1
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">6,945 kilometers away</div>
+                <div class="card-text">1-7 Nov</div>
+                <div class="price-text">
+                  <b>$320</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property5.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">El Nido, Philippines</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property6.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Sordetalje, Sweden</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$940</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property7.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Ile de brehet, France</div>
+                <div class="rating">4.8
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">6,945 kilometers away</div>
+                <div class="card-text">1-7 Nov</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+
+
+
+
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+          <!-- Card 9 -->
+          <div class="rental-card">
+            <div class="img-container">
+
+                <img class="rental-image" alt="property-img" src="./images/main/property8.png" />
+
+              <!-- <img class="favourite-icon" alt="favourite icon" src="./images/main/heart.svg" /> -->
+              <svg class="favourite-icon" alt="favourite icon"  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C23 23.267 30 18 30 11C30 9.208 29.317 7.417 27.95 6.05C26.583 4.684 24.792 4 23 4C21.209 4 19.417 4.684 18.051 6.05L16 8.101L13.95 6.05C12.583 4.684 10.792 4 9 4C7.209 4 5.417 4.684 4.051 6.05C2.684 7.417 2 9.208 2 11C2 18 9 23.267 16 28Z" fill="#4d4d4d" fill-opacity="0.8" stroke="white" stroke-width="2"/>
+              </svg>
+
+              <div class="pagination">
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
+              </div>
+            </div>
+            <div class="rental-content">
+              <div class="rental-content-top">
+                <div class="rental-name">Scotland Island, Australia</div>
+                <div class="rating">4.3
+                <img class="rating-icon" alt="star icon" src="./images/main/star.svg" />
+              </div>
+              </div>
+
+              <div class="rental-content-bottom">
+                <div class="card-text">2,776 kilometers away</div>
+                <div class="card-text">23-28 June</div>
+                <div class="price-text">
+                  <b>$900</b>
+                  <span class="night"> night</span>
+                </div>
+              </div>
+                
+            </div>
+          </div>  
+
+
+
+
+
+
+      </div>
+
+    </div>
+    
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top" >
+      <div class="column" >
+        <h3 class="footer-heading">Support</h3>
+        <ul>
+          <li>
+            <a class="footer-links ">Help Center</a>
+          </li>
+          <li>
+            <a class="footer-links">Safety information</a>
+          </li>
+        </ul>      
+        
+      </div>
+      <div class="column" >
+        <h3 class="footer-heading">Community</h3>
+        <ul>
+          <li>
+            <a class="footer-links">Airbnb.org: disaster relief housing</a>
+          </li>
+          <li>
+            <a class="footer-links">Celebrating diversity & belonging</a>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="column" >
+        <h3 class="footer-heading">Hosting</h3>
+        <ul>
+          <li>
+            <a class="footer-links">Try hosting</a>
+          </li>
+          <li>
+            <a class="footer-links">AirCover: protection for Hosts</a>
+          </li>
+        </ul>   
+        
+      </div>
+      <div class="column" >
+        <h3 class="footer-heading">About</h3>
+        <ul>
+          <li>
+            <a class="footer-links">Newsroom</a>
+          </li>
+          <li>
+            <a class="footer-links">Learn about new features</a>
+          </li>
+        </ul>   
+        
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <div class="rentico-inc">&copy; 2023 Rentico, Inc.</div>
+        <div class="footer-bottom-left-link">
+          <div class="dot"></div>
+          <a class="footer-links">Privacy</a>
+        </div>
+        <div class="footer-bottom-left-link">
+          <div class="dot"></div>
+          <a class="footer-links">Terms</a>
+        </div>
+        
+        
+      </div>
+      <div class="footer-bottom-right">
+        <div class="lang-and-currency">
+          <button class="language">
+            <img class="globe-icon" alt="" src="./images/footer/globeicon.svg" />
+
+            <div class="english-us">English (US)</div>
+          </button>
+          <button class="currency">
+            <img class="dollar-icon" alt="" src="./images/footer/dollaricon.svg" />
+
+            <div class="english-us">USD</div>
+          </button>
+        </div>
+        <div class="social-media">
+          <a class="socials">
+            <img
+              class="facebook"
+              alt=""
+              src="./images/footer/facebookicon.svg"
+            />
+          </a>
+          <a class="socials">
+            <img class="twitter" alt="" src="./images/footer/twittericon.svg" />
+          </a>
+          <a class="socials">
+            <img
+              class="instagram"
+              alt=""
+              src="./images/footer/instagramicon.svg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>       
+
+
+  <!-- Js -->
+  <script src="script.js"></script>
+
+  <!-- Datepicker for SearchPopup -->
+<script src="dateRangePicker/dateRangePicker.js"></script>
+<link rel="stylesheet" href="dateRangePicker/dateRangePicker.css">
+  
+  <script src="searchPopup.js"></script>
+  
+</body>
+</html>
